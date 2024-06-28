@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Footer from './components/Footer';
+import products from './data/Products';
 
-function App() {
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+const App = () => {
+  const [selectedCategory, setSelectedCategory] = useState('Semua');
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredProducts = selectedCategory === 'Semua'
+    ? products
+    : products.filter(product => product.category === selectedCategory);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="bg-gray-50 min-h-screen">
+        <Navbar />
+        <Routes>
+            <Route exact path="/" element={<Home products={filteredProducts} onCategoryClick={handleCategoryClick}/>}/>
+          </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
