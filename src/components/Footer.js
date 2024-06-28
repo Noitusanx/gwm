@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
     </div>
 
-    <p class="text-center py-4 mt-8">&copy; 2024 GWM - Stat Marketplace. Hak Cipta Dilindungi.</p>
+    <p class="text-center py-4 px-2 mt-8">&copy; 2024 GWM - Stat Marketplace. Hak Cipta Dilindungi.</p>
 </footer>
   );
 };
