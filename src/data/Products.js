@@ -20,6 +20,7 @@ const products = [
       harga: 70000,
       gambar: beras,
       category: 'Bahan Pokok',
+      total: 20,
       deskripsi: 'Harganya 70.000/5kg dengan jumlah barang yang tersedia 20 unit beras'
     },
     {
@@ -28,6 +29,7 @@ const products = [
       harga: 15000,
       gambar: minyakmakan,
       category: 'Bahan Pokok',
+      total: 20,
       deskripsi: 'Harganya 15.000/liter dengan jumlah barang yang tersedia 20 liter'
     },
     {
@@ -36,6 +38,7 @@ const products = [
       harga: 3000,
       gambar: sayurkangkung,
       category: 'Bahan Pokok',
+      total: 84,
       deskripsi: 'Harganya 3.000/ikat dengan jumlah barang yang tersedia 84 ikat'
     },
     {
@@ -44,6 +47,7 @@ const products = [
       harga: 3000,
       gambar: sayurbayam,
       category: 'Bahan Pokok',
+      total: 84,
       deskripsi: 'Harganya 3.000/ikat dengan jumlah barang yang tersedia 84 ikat'
     },
     {
@@ -52,6 +56,7 @@ const products = [
       harga: 60000,
       gambar: plastikminyak,
       category: 'Bahan Pokok',
+      total: 5,
       deskripsi: 'Harganya 60.000/pack dengan jumlah barang yang tersedia 5 pack'
     },
     {
@@ -60,6 +65,7 @@ const products = [
       harga: 50000,
       gambar: plastikminyaksetengah,
       category: 'Bahan Pokok',
+      total: 6,
       deskripsi: 'Harganya 50.000/pack dengan jumlah barang yang tersedia 6 pack'
     },
     {
@@ -68,6 +74,7 @@ const products = [
       harga: 1500,
       gambar: telur,
       category: 'Bahan Pokok',
+      total: 90,
       deskripsi: 'Harganya 1.500/butir dengan jumlah barang yang tersedia 90 butir'
     },
     {
@@ -76,6 +83,7 @@ const products = [
       harga: 2500,
       gambar: pisaucutter,
       category: 'Bahan Pokok',
+      total: 48,
       deskripsi: 'Harganya 2.500/pcs dengan jumlah barang yang tersedia 48 pcs'
     },
     {
@@ -84,6 +92,7 @@ const products = [
       harga: 33000,
       gambar: pisaudaging,
       category: 'Bahan Pokok',
+      total: 3,
       deskripsi: 'Harganya 33.000/unit dengan jumlah barang yang tersedia 3 unit'
     },
     {
@@ -92,6 +101,7 @@ const products = [
       harga: 18000,
       gambar: gula,
       category: 'Bahan Pokok',
+      total: 20,
       deskripsi: 'Harganya 18.000/kg dengan jumlah barang yang tersedia 20kg gula'
     },
     {
@@ -100,6 +110,7 @@ const products = [
       harga: 120000,
       gambar: matematika,
       category: 'Modul Belajar',
+      total: 1,
       deskripsi: 'Buku matematika dengan harga 120.000/buku'
     },
     {
@@ -108,6 +119,7 @@ const products = [
       harga: 120000,
       gambar: statistika,
       category: 'Modul Belajar',
+      total: 1,
       deskripsi: 'Buku matematika dengan harga 120.000/buku'
     },
     {
@@ -116,7 +128,7 @@ const products = [
       harga: 0,
       gambar: konsultasibelajar,
       category: "Konsultasi Belajar",
-      deskripsi: "Konsultasi belajar secara gratis! Caranya dengan menghubungi nomor berikut: ",
+      deskripsi: "Konsultasi belajar Statistika secara gratis! Caranya dengan menghubungi nomor berikut: ",
       nomor_telepon: "+62 812-8193-9361"
     }
   ];

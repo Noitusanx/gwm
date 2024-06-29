@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from 'react';
-import Modal from './Modal'; // Import modal component
+import { useNavigate } from 'react-router-dom';
+import Modal from './Modal';
 
 const ProductCard = ({ product }) => {
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   const openModal = () => {
     setShowModal(true);
@@ -13,24 +15,46 @@ const ProductCard = ({ product }) => {
     setShowModal(false);
   };
 
+  const handleOrderClick = (product) => {
+    if (product.harga === 0) {
+        const message = `Halo, saya tertarik dengan layanan ${product.nama_produk} Statistika. Apakah saya bisa konsultasi belajar?`;
+        
+        const whatsappURL = `https://wa.me/${product.nomor_telepon.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+        
+        window.open(whatsappURL, '_blank');
+    } else {
+        navigate(`/orderform/${product.id}`);
+    }
+};
+
   return (
     <>
       <div
-        className="duration-500 hover:scale-105 hover:shadow-xl product mx-8"
+        className="duration-500 hover:scale-105 hover:shadow-xl product mx-8 font-poppins"
         onClick={openModal}
       >
-        <div className="bg-white rounded-lg shadow-md pb-2 pt-6">
-          <div className="h-[200px] aspect-w-16 aspect-h-9">
-            <img
-              src={product.gambar}
-              alt="Produk"
-              className="rounded-t-lg object-contain w-full h-full"
-            />
+        <div className="bg-white rounded-lg shadow-md pb-2 pt-6 relative">
+          <div>
+            <div className="h-[200px] aspect-w-16 aspect-h-9">
+              <img
+                src={product.gambar}
+                alt="Produk"
+                className="rounded-t-lg object-contain w-full h-full"
+              />
+            </div>
+            <div className='flex justify-between'>
+              <div className="mx-4 py-3">
+                <h3>{product.nama_produk}</h3>
+                <h3>Rp {product.harga.toLocaleString('id-ID')}</h3>
+              </div>
+            </div>
           </div>
-          <div className="mx-4 py-3">
-            <h3>{product.nama_produk}</h3>
-            <h3>Rp {product.harga.toLocaleString('id-ID')}</h3>
-          </div>
+          <button
+              type="button"
+              className='absolute bottom-3 right-3 bg-button-gradient text-blue-900 font-medium px-6 py-2 hover:scale-105 hover:bg-button-hover rounded-lg'
+              onClick={() => handleOrderClick(product)}>
+              Pesan
+          </button>
         </div>
       </div>
       {showModal && (

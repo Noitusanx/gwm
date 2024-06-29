@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import products from './data/Products';
-
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import OrderForm from './pages/OrderForm';
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('Semua');
@@ -19,13 +19,16 @@ const App = () => {
 
   return (
     <Router>
-      <div className="bg-gray-50 min-h-screen">
-        <Navbar />
         <Routes>
-            <Route exact path="/" element={<Home products={filteredProducts} onCategoryClick={handleCategoryClick}/>}/>
-          </Routes>
-        <Footer />
-      </div>
+          <Route exact path="/" element={
+              <div className="bg-gray-50 min-h-screen">
+                  <Navbar />
+                  <Home products={filteredProducts} onCategoryClick={handleCategoryClick} />
+                  <Footer />
+              </div>
+          } />
+          <Route path="/orderform/:productId" element={<OrderForm />} />
+        </Routes>
     </Router>
   );
 };
