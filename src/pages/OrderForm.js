@@ -11,7 +11,7 @@ const OrderForm = () => {
   const { productId } = useParams();
   const selectedProduct = products.find((p) => p.id === parseInt(productId));
 
-  const [jumlah, setjumlah] = useState(1);
+  const [jumlah, setJumlah] = useState(1);
   const [harga, setHarga] = useState(selectedProduct ? selectedProduct.harga : 0);
 
   useEffect(() => {
@@ -32,8 +32,12 @@ const OrderForm = () => {
   }
 
   const handleJumlahChange = (event) => {
-    const newjumlah = parseInt(event.target.value);
-    setjumlah(newjumlah);
+    const newJumlah = parseInt(event.target.value);
+    if (newJumlah <= selectedProduct.total) {
+      setJumlah(newJumlah);
+    } else {
+      alert(`Jumlah yang dimasukkan melebihi stok yang tersedia [${selectedProduct.total}].`);
+    }
   };
 
   const handleSubmit = (event) => {
