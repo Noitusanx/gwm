@@ -62,7 +62,7 @@ const OrderForm = () => {
             <form id="checkout-form" onSubmit={handleSubmit} className="w-full space-y-6 md:mx-0 mx-8">
             <h1 className="text-4xl font-bold pt-3 mr-6">Formulir Pesanan untuk <span className='text-gradient'>{selectedProduct.nama_produk}</span></h1>
                 <input type="hidden" name="product_id" value={selectedProduct.id} />
-                <label className="block">
+                <label className="block mr-8">
                     <span className="mb-1">Nama:</span>
                     <input
                         type="text"
@@ -73,7 +73,7 @@ const OrderForm = () => {
                         required
                     />
                 </label>
-                <label className="block">
+                <label className="block mr-8">
                     <span className="mb-1">Alamat Pengiriman:</span>
                     <input
                         type="text"
@@ -84,7 +84,7 @@ const OrderForm = () => {
                         required
                     />
                 </label>
-                <label className="block">
+                <label className="block mr-8">
                     <span className="mb-1">Nomor Telepon:</span>
                     <input
                         type="text"
@@ -95,7 +95,7 @@ const OrderForm = () => {
                         required
                     />
                 </label>
-                <label className="block">
+                <label className="block mr-8">
                     <span className="mb-1">jumlah:</span>
                     <input
                         type="number"
@@ -106,11 +106,11 @@ const OrderForm = () => {
                         max={selectedProduct.jumlah}
                         min={1}
                         placeholder="Jumlah barang yang dipesan"
-                        className="block w-full bg-gray-100 pl-2 py-2"
+                        className="block w-full bg-gray-100 pl-2 py-2 pr-4"
                         required
                     />
                 </label>
-                <label className="block">
+                <label className="block mr-8">
                     <span className="mb-1">Harga:</span>
                     <input
                         type="number"
@@ -121,7 +121,7 @@ const OrderForm = () => {
                         className="block w-full bg-gray-100 pl-2 py-2"
                     />
                 </label>
-                <label className="block">
+                <label className="block mr-8">
                     <span className="mb-1">Metode Pembayaran:</span><br />
                     <input type="radio" id="transfer" name="paymentMethod" value="Transfer Bank" required className="mr-2" />
                     <label htmlFor="transfer">Transfer Bank</label><br />
