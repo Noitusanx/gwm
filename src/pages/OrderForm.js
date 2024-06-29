@@ -55,12 +55,12 @@ const OrderForm = () => {
   return (
     <section className="bg-gray-100 text-gray-900 relative min-h-screen font-poppins">
     <Link to="/">
-        <img src={leftarrow} alt="left arrow" className="w-6 ml-9 pt-8"/>
+        <img src={leftarrow} alt="left arrow" className="w-6 ml-6 pt-8"/>
     </Link>
     <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
         <div className="md:order-2 md:py-0 md:px-6 my-4">
             <form id="checkout-form" onSubmit={handleSubmit} className="w-full space-y-6 md:mx-0 mx-8">
-            <h1 className="text-4xl font-bold pt-3">Formulir Pesanan untuk <span className=' text-gradient'>{selectedProduct.nama_produk}</span></h1>
+            <h1 className="text-4xl font-bold pt-3 mr-6">Formulir Pesanan untuk <span className='text-gradient'>{selectedProduct.nama_produk}</span></h1>
                 <input type="hidden" name="product_id" value={selectedProduct.id} />
                 <label className="block">
                     <span className="mb-1">Nama:</span>
@@ -131,7 +131,7 @@ const OrderForm = () => {
 
                 <div className='flex justify-end pt-8'>
                     <button type="submit" className="self-center px-6 py-3 text-lg bg-button-gradient text-gray-600 md:mr-0 mr-6 hover:opacity-70 font-medium rounded-lg">
-                        Kirim Pesanan
+                        Kirim
                     </button>
                 </div>
             </form>
