@@ -33,12 +33,18 @@ const OrderForm = () => {
 
   const handleJumlahChange = (event) => {
     const newJumlah = parseInt(event.target.value);
-    if (newJumlah <= selectedProduct.total) {
-      setJumlah(newJumlah);
+    
+    if (isNaN(newJumlah)) {
+        alert('Jumlah tidak boleh kosong');
+        setJumlah('');
+    } else if (newJumlah === 0) {
+        alert('Jumlah tidak boleh 0');
+    } else if (newJumlah <= selectedProduct.total) {
+        setJumlah(newJumlah);
     } else {
-      alert(`Jumlah yang dimasukkan melebihi stok yang tersedia [${selectedProduct.total}].`);
+        alert(`Jumlah yang dimasukkan melebihi stok yang tersedia [${selectedProduct.total}].`);
     }
-  };
+};
 
   const handleSubmit = (event) => {
     event.preventDefault(); 
