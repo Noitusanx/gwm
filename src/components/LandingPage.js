@@ -9,7 +9,7 @@ const LandingPage = () => {
           <div className="flex-1 flexStart flex-col sm:px-16 px-6">
             <div className="flex flex-row justify-between items-center w-full">
               <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] ss:leading-[100px] leading-[75px]">
-                Situs Web <br class="sm:block hidden" />
+                Situs Web <br className="sm:block hidden" />
                 <span className="text-gradient">GWM </span>
               </h1>
             </div>
